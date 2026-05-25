@@ -81,6 +81,7 @@ T_{\text{exec}} = \frac{T_{\text{calc}}}{k \cdot \min(T, P)} + \alpha \cdot \max
 \begin{table}[h]
 \centering
 \caption{Qwen3-TTS CPU 최적화 전후 성능 비교}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lcc}
 \toprule
 \textbf{평가 지표} & \textbf{기본 Eager (Float32)} & \textbf{제안 최적화 (BFloat16)} \\
@@ -89,7 +90,8 @@ T_{\text{exec}} = \frac{T_{\text{calc}}}{k \cdot \min(T, P)} + \alpha \cdot \max
 RAM 오버헤드 & 1,727.28 MB & \textbf{-428.54 MB} \\
 추론 Peak RAM & ~2,108.51 MB & \textbf{~1,255.32 MB} \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 실증 실험에서 드러난 가장 혁신적인 사실은 최적화 로딩 과정에서 기록된 \textbf{음수 RAM 오버헤드(-428.54 MB)}이다. 가상 주소 매핑을 활용하면 힙 할당 단계를 우회하므로 가비지 컬렉터의 메모리 회수 효과가 극대화되어 실질적 Zero-RAM 적재가 가능해진다.
