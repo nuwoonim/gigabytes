@@ -26,10 +26,10 @@ class Qwen3TTSGUI:
 
         # Variables
         self.model = None
-        self.model_dir = "C:\\Users\\gytw2\\Desktop\\ttsk\\Qwen3-TTS-12Hz-1.7B-Base-BNB-4bit"
-        self.ref_audio_var = tk.StringVar(value="C:\\Users\\gytw2\\Desktop\\ttsk\\woo1.wav")
+        self.model_dir = ""
+        self.ref_audio_var = tk.StringVar(value="")
         self.ref_text_var = tk.StringVar(value="")
-        self.output_path_var = tk.StringVar(value="C:\\Users\\gytw2\\Desktop\\ttsk\\output_voice_clone.wav")
+        self.output_path_var = tk.StringVar(value="output_voice_clone.wav")
         self.status_var = tk.StringVar(value="Ready. Click 'Load Model' to begin.")
         self.ram_var = tk.StringVar(value="RAM Usage: - MB")
         self.thread_limit_var = tk.StringVar(value="4")
@@ -68,7 +68,7 @@ class Qwen3TTSGUI:
         self.style.configure("TEntry", fieldbackground="#323246", foreground="#f8f9fa", borderwidth=0)
 
     def load_default_ref_text(self):
-        txt_path = "C:\\Users\\gytw2\\Desktop\\ttsk\\woo.txt"
+        txt_path = "woo.txt"
         if os.path.exists(txt_path):
             try:
                 with open(txt_path, "r", encoding="utf-8") as f:

@@ -193,7 +193,7 @@ By forcing a strict thread limit of \(T = \min(P, 4)\) using `torch.set_num_thre
   <li>**Software Stack**: Python 3.14.0 (64-bit), PyTorch 2.12.0+cpu, SoundFile 0.13.1, psutil 6.1.1</li>
 </ul>
 <p>
-We implemented a lightweight GUI dashboard [gui_runner.py](file:///C:/Users/gytw2/Desktop/ttsk/gui_runner.py) using native Tkinter to prevent interface freezing through background threading (`threading.Thread`). The GUI displays live RSS process memory usage (`psutil`) to visually prove the efficiency of virtual weight mapping.
+We implemented a lightweight GUI dashboard gui_runner.py using native Tkinter to prevent interface freezing through background threading (`threading.Thread`). The GUI displays live RSS process memory usage (`psutil`) to visually prove the efficiency of virtual weight mapping.
 </p>
 
 <h2>Ⅳ. Benchmark Analysis and Results</h2>
@@ -241,7 +241,7 @@ The most striking result is the **negative RAM overhead (-428.54 MB)** during op
 
 <h3>2. Audio Synthesis Integrity and Mathematical 무결성</h3>
 <p>
-The generated output file [output_voice_clone.wav](file:///C:/Users/gytw2/Desktop/ttsk/output_voice_clone.wav) has an audio length of **7.04 seconds** at a **24,000 Hz** sample rate. The exact file size is **337,964 Bytes**.
+The generated output file output_voice_clone.wav has an audio length of **7.04 seconds** at a **24,000 Hz** sample rate. The exact file size is **337,964 Bytes**.
 </p>
 <p>
 We prove the mathematical integrity of the BFloat16 synthesized output via the wave structural equation:

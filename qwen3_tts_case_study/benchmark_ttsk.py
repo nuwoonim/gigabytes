@@ -12,7 +12,7 @@ def get_ram_usage():
 # Load qwen_tts
 from qwen_tts import Qwen3TTSModel
 
-model_dir = "C:\\Users\\gytw2\\Desktop\\ttsk\\Qwen3-TTS-12Hz-1.7B-Base-BNB-4bit"
+model_dir = ""  # Set this to your local model path
 
 def benchmark_baseline():
     print("\n--- 1. Baseline Model Loading (Float32) ---")
@@ -86,7 +86,7 @@ def benchmark_optimized():
         # Test a brief synthesis to ensure BFloat16 CPU execution is mathematically fully functional
         print("Testing voice synthesis in BFloat16 CPU mode...")
         sys.stdout.flush()
-        ref_audio = "C:\\Users\\gytw2\\Desktop\\ttsk\\woo1.wav"
+        ref_audio = "woo1.wav"
         ref_text = "언제까지 하라는 거야. 진짜. 귀찮게 왜 자꾸 귀찮게해.내가 지금 아까 얘기하고 있는데도 내말을 끊어버리고, 그리고 아빠할 말 할려고 아주 눈에 불을 끼고 기다리는 모습이 아주 한데 때려 주고 싶었어. 아바 꿀밤을 맞을거야."
         wavs, sr = model.generate_voice_clone(
             text="안녕하세요.",

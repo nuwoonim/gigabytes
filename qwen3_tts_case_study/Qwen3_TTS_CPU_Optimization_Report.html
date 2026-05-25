@@ -207,11 +207,9 @@ T_{\text{exec}} = \frac{T_{\text{calc}}}{k \cdot \min(T, P)} + \alpha \cdot \max
 본 연구에서는 두 가지 제어 스크립트와 한 가지 실증 분석 벤치마크 모듈을 최적화하여 작성하였다.
 </p>
 <p>
-첫째, 로컬 검증 스크립트인 <a href="file:///C:/Users/gytw2/Desktop/ttsk/run_qwen3_tts_cpu.py">run_qwen3_tts_cpu.py</a>에 기존 Float32 구성을 배제하고, `bfloat16` 정밀도와 `low_cpu_mem_usage=True`를 강제 선언하여 디스크 가중치 매핑 구조를 완성하였다. 또한, 기존 원격 인터넷 음성 의존성을 완전히 탈피하기 위해 사용자 로컬 음성 가중치 템플릿인 `woo1.wav`와 발화 매칭용 한국어 스크립트 `woo.txt`를 로컬 경로에서 탐색하여 합성하는 완전 오프라인 음성 복제(Voice Cloning) 파이프라인으로 리팩토링하였다.
+첫째, 로컬 검증 스크립트인 <code>run_qwen3_tts_cpu.py</code>에 기존 Float32 구성을 배제하고, `bfloat16` 정밀도와 `low_cpu_mem_usage=True`를 강제 선언하여 디스크 가중치 매핑 구조를 완성하였다. 또한, 기존 원격 인터넷 음성 의존성을 완전히 탈피하기 위해 사용자 로컬 음성 가중치 템플릿인 `woo1.wav`와 발화 매칭용 한국어 스크립트 `woo.txt`를 로컬 경로에서 탐색하여 합성하는 완전 오프라인 음성 복제(Voice Cloning) 파이프라인으로 리팩토링하였다.
 </p>
-<p>
-둘째, 공통 CLI 실행 도구인 <a href="file:///C:/Users/gytw2/Desktop/ttsk/scripts/tts_runner.py">scripts/tts_runner.py</a>의 코어 함수인 `_load_model` 내부에 다음 최적화 파라미터를 하드코딩하여 통합하였다.
-</p>
+
 <div class="equation-block">
 <pre style="margin: 0; font-family: Consolas, monospace; font-size: 0.9rem; color: #1f3b5b;">
 def _load_model(model_path: str):
@@ -281,7 +279,7 @@ def _load_model(model_path: str):
 
 <h3>2. 합성 품질 및 파형 물리적 정밀 분석</h3>
 <p>
-최적화 코드를 통해 최종 도출된 한글 음성 출력 파일인 <a href="file:///C:/Users/gytw2/Desktop/ttsk/output_voice_clone.wav">output_voice_clone.wav</a>의 바이너리 명세 데이터는 다음과 같다.
+최적화 코드를 통해 최종 도출된 한글 음성 출력 파일인 <code>output_voice_clone.wav</code>의 바이너리 명세 데이터는 다음과 같다.
 </p>
 <ul>
   <li>**총 저장 바이트**: **337,964 Bytes**</li>
@@ -355,7 +353,7 @@ S_{\text{packed}} = (C \ll 10) \mid (V \ll 5) \mid T
 실증을 통해 초기 적재 메모리 오버헤드가 **0 MB 수준**으로 제어되고 로딩 성능은 **3x배 이상 급증**하여, 저출산 가구 편중 현상 논의에서 세액공제가 갖는 고소득 편의 강화 효과처럼, 하드웨어의 미시적 최적화 설계를 통해서만 인위적으로 고소득 CPU 가치가 극대화될 수 있음을 시스템적으로 명증하였다. 
 </p>
 <p>
-본 논문이 규명하고 깃허브 오픈소스로 반영한 <a href="file:///C:/Users/gytw2/Desktop/ttsk/gui_runner.py">gui_runner.py</a> 제어 모듈과 벤치마크 툴킷은 고성능 인프라 의존형 대형 AI 기술을 누구나 접근 가능한 로컬 민주적 AI(Democratized Local AI) 형태로 변모시키는 핵심 공학적 도구가 될 것임을 확신하며 정책적·공학적 대안으로 엄숙히 제언한다.
+본 논문이 규명하고 깃허브 오픈소스로 반영한 <code>gui_runner.py</code> 제어 모듈과 벤치마크 툴킷은 고성능 인프라 의존형 대형 AI 기술을 누구나 접근 가능한 로컬 민주적 AI(Democratized Local AI) 형태로 변모시키는 핵심 공학적 도구가 될 것임을 확신하며 정책적·공학적 대안으로 엄숙히 제언한다.
 </p>
 
 </body>
