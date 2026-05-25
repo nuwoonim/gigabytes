@@ -129,6 +129,7 @@ The actual benchmark results obtained on the CPU laptop:
 The operational scripts used to profile and execute this case study can be found in the [qwen3_tts_case_study/](qwen3_tts_case_study/) folder:
 - **[benchmark_ttsk.py](qwen3_tts_case_study/benchmark_ttsk.py)**: Automated, unbuffered comparative benchmarking script.
 - **[run_qwen3_tts_cpu.py](qwen3_tts_case_study/run_qwen3_tts_cpu.py)**: 100% offline, memory-mapped Korean voice cloning operational test.
+- **[gui_runner.py](qwen3_tts_case_study/gui_runner.py)**: A lightweight, dark-mode desktop GUI built with native Tkinter. Supports thread throttling, real-time RSS memory tracking, asynchronous background workers (no UI freezing), and native audio playback.
 
 ---
 
