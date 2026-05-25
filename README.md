@@ -130,6 +130,7 @@ The operational scripts used to profile and execute this case study can be found
 - **[benchmark_ttsk.py](qwen3_tts_case_study/benchmark_ttsk.py)**: Automated, unbuffered comparative benchmarking script.
 - **[run_qwen3_tts_cpu.py](qwen3_tts_case_study/run_qwen3_tts_cpu.py)**: 100% offline, memory-mapped Korean voice cloning operational test.
 - **[gui_runner.py](qwen3_tts_case_study/gui_runner.py)**: A lightweight, dark-mode desktop GUI built with native Tkinter. Supports thread throttling, real-time RSS memory tracking, asynchronous background workers (no UI freezing), and native audio playback.
+- **[Qwen3_TTS_CPU_Optimization_Report.html](qwen3_tts_case_study/Qwen3_TTS_CPU_Optimization_Report.html)**: A comprehensive, publication-grade academic research paper documenting the mathematical formalization, background hardware context, real-world CPU benchmarks, and the information-theoretic integration between neural weights streaming and Hangeul 15-bit phonology. Fully supports MathJax LaTeX math rendering and UTF-8 encoding.
 
 ---
 
